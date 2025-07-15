@@ -1,0 +1,34 @@
+qrsedapi.localhost {
+    @websockets {
+        path /api/ws*
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+
+    handle @websockets {
+        reverse_proxy http://localhost:4000 {
+            header_up X-Forwarded-Proto https
+            header_up X-Forwarded-Host {host}
+        }
+    }
+
+    handle {
+        reverse_proxy http://localhost:4000 {
+            header_up X-Forwarded-Proto https
+            header_up X-Forwarded-Host {host}
+        }
+    }
+}
+
+qrsedweb.localhost {
+    handle {
+        reverse_proxy localhost:5173 {
+            header_up X-Forwarded-Proto https
+            header_up X-Forwarded-Host {host}
+        }
+    }
+}
+
+mail.stash.localhost {
+	reverse_proxy localhost:8025
+}
