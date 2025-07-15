@@ -51,8 +51,9 @@ const apiRoutes = new Elysia({ prefix: "/api" })
 const app = new Elysia()
   .use(cors({
     origin: [
-     "https://qrsedweb.localhost",
-     "https://qrsedapi.localhost"
+      "https://dnd.failytales.com",
+      process.env.APP_URL!,
+      process.env.API_URL!,
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     credentials: true,

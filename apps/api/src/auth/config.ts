@@ -24,8 +24,7 @@ export const auth = betterAuth({
   trustedOrigins: [
     process.env.APP_URL!,
     process.env.API_URL!,
-    "https://qrsedweb.localhost",
-    "https://qrsedapi.localhost"
+    "https://dnd.failytales.com",
   ],
   advanced: {
     trustProxy: true,
