@@ -49,7 +49,8 @@ export default function ForgotPasswordDialog({ isOpen, setIsOpen }: ForgotPasswo
     try {
       await authClient.requestPasswordReset({
         email: data.email,
-        redirectTo: "https://qrsedweb.localhost/reset-password",
+        redirectTo: `${import.meta.env.VITE_API_URL}/reset-password`,
+        // redirectTo: "https://qrsedweb.localhost/reset-password",
       });
       setMessage("Password reset email sent! Check your inbox.");
       setMessageType("success");
