@@ -51,7 +51,8 @@ const apiRoutes = new Elysia({ prefix: "/api" })
 const app = new Elysia()
   .use(cors({
     origin: [
-      "https://dnd.failytales.com",
+      "https://app.qrsed.com",
+      "https://api.qrsed.com",
       process.env.APP_URL!,
       process.env.API_URL!,
     ],
