@@ -29,6 +29,10 @@ qrsedweb.localhost {
     }
 }
 
+landing.localhost {
+    reverse_proxy localhost:4321
+}
+
 mail.stash.localhost {
 	reverse_proxy localhost:8025
 }
